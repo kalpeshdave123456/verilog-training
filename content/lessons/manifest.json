@@ -1,0 +1,122 @@
+[
+  {
+    "id": "01_boolean_logic",
+    "title": "Boolean Logic and Number Systems",
+    "file": "content/lessons/01_boolean_logic.md",
+    "track": "core"
+  },
+  {
+    "id": "02_combinational_design",
+    "title": "Combinational Design Patterns",
+    "file": "content/lessons/02_combinational_design.md",
+    "track": "core"
+  },
+  {
+    "id": "03_sequential_design",
+    "title": "Sequential Design and Registers",
+    "file": "content/lessons/03_sequential_design.md",
+    "track": "core"
+  },
+  {
+    "id": "04_verilog_basics",
+    "title": "Verilog Fundamentals",
+    "file": "content/lessons/04_verilog_basics.md",
+    "track": "core"
+  },
+  {
+    "id": "05_vhdl_basics",
+    "title": "VHDL Fundamentals",
+    "file": "content/lessons/05_vhdl_basics.md",
+    "track": "core"
+  },
+  {
+    "id": "06_fsm_design",
+    "title": "FSM Design for Interviews",
+    "file": "content/lessons/06_fsm_design.md",
+    "track": "core"
+  },
+  {
+    "id": "07_assignments",
+    "title": "Blocking vs Non-Blocking Assignments",
+    "file": "content/lessons/07_assignments.md",
+    "track": "core"
+  },
+  {
+    "id": "08_timing",
+    "title": "Timing, Setup, Hold, and CDC Basics",
+    "file": "content/lessons/08_timing.md",
+    "track": "core"
+  },
+  {
+    "id": "09_testbenches",
+    "title": "Testbench Basics and Self-Checking",
+    "file": "content/lessons/09_testbenches.md",
+    "track": "core"
+  },
+  {
+    "id": "10_synthesis",
+    "title": "Synthesis and Lint Traps",
+    "file": "content/lessons/10_synthesis.md",
+    "track": "core"
+  },
+  {
+    "id": "11_counters",
+    "title": "Counters, Shifters, and Clock Enables",
+    "file": "content/lessons/11_counters.md",
+    "track": "core"
+  },
+  {
+    "id": "12_memories",
+    "title": "RAM, ROM, and Register Files",
+    "file": "content/lessons/12_memories.md",
+    "track": "core"
+  },
+  {
+    "id": "13_reset",
+    "title": "Reset Strategy and Initialization",
+    "file": "content/lessons/13_reset.md",
+    "track": "core"
+  },
+  {
+    "id": "14_case_patterns",
+    "title": "Case Statements, Defaults, and Priority",
+    "file": "content/lessons/14_case_patterns.md",
+    "track": "core"
+  },
+  {
+    "id": "15_fsm_debug",
+    "title": "FSM Debug Playbook",
+    "file": "content/lessons/15_fsm_debug.md",
+    "track": "core"
+  },
+  {
+    "id": "16_pipeline",
+    "title": "Pipelining and Throughput",
+    "file": "content/lessons/16_pipeline.md",
+    "track": "core"
+  },
+  {
+    "id": "17_interview_patterns",
+    "title": "Most Common RTL Interview Patterns",
+    "file": "content/lessons/17_interview_patterns.md",
+    "track": "core"
+  },
+  {
+    "id": "18_verilog_vs_vhdl",
+    "title": "Verilog vs VHDL Comparison",
+    "file": "content/lessons/18_verilog_vs_vhdl.md",
+    "track": "core"
+  },
+  {
+    "id": "19_waveforms",
+    "title": "Waveform Reading Techniques",
+    "file": "content/lessons/19_waveforms.md",
+    "track": "core"
+  },
+  {
+    "id": "20_revision",
+    "title": "Rapid Revision Sheet",
+    "file": "content/lessons/20_revision.md",
+    "track": "core"
+  }
+]

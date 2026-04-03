@@ -1,0 +1,30 @@
+[
+  {
+    "id": 1,
+    "topic": "Verilog Basics",
+    "title": "Add your preferred Verilog fundamentals video",
+    "url": "#",
+    "source": "Curate"
+  },
+  {
+    "id": 2,
+    "topic": "VHDL Basics",
+    "title": "Add your preferred VHDL fundamentals video",
+    "url": "#",
+    "source": "Curate"
+  },
+  {
+    "id": 3,
+    "topic": "FSM Design",
+    "title": "Add your preferred FSM interview video",
+    "url": "#",
+    "source": "Curate"
+  },
+  {
+    "id": 4,
+    "topic": "Timing",
+    "title": "Add your preferred setup/hold explainer",
+    "url": "#",
+    "source": "Curate"
+  }
+]

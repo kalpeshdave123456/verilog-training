@@ -1,0 +1,272 @@
+[
+  {
+    "id": 1,
+    "title": "Waveform Challenge #1",
+    "difficulty": "medium",
+    "question": "Given clk, rst_n, en, and d/q behavior, predict q after the marked edge.",
+    "diagram": "clk : _|-|_|-|_|-|_\nrst : 0___11111111\nen  : 0_1110_1110_\nd   : 010110100101\nq   : ????????????",
+    "answer": "After reset deasserts, q updates only on active clock edges when enable is high.",
+    "explanation": "Track state only on active edges and ignore data changes between sampling instants."
+  },
+  {
+    "id": 2,
+    "title": "Waveform Challenge #2",
+    "difficulty": "hard",
+    "question": "Given clk, rst_n, en, and d/q behavior, predict q after the marked edge.",
+    "diagram": "clk : _|-|_|-|_|-|_\nrst : 0___11111111\nen  : 0_1110_1110_\nd   : 010110100101\nq   : ????????????",
+    "answer": "After reset deasserts, q updates only on active clock edges when enable is high.",
+    "explanation": "Track state only on active edges and ignore data changes between sampling instants."
+  },
+  {
+    "id": 3,
+    "title": "Waveform Challenge #3",
+    "difficulty": "easy",
+    "question": "Given clk, rst_n, en, and d/q behavior, predict q after the marked edge.",
+    "diagram": "clk : _|-|_|-|_|-|_\nrst : 0___11111111\nen  : 0_1110_1110_\nd   : 010110100101\nq   : ????????????",
+    "answer": "After reset deasserts, q updates only on active clock edges when enable is high.",
+    "explanation": "Track state only on active edges and ignore data changes between sampling instants."
+  },
+  {
+    "id": 4,
+    "title": "Waveform Challenge #4",
+    "difficulty": "medium",
+    "question": "Given clk, rst_n, en, and d/q behavior, predict q after the marked edge.",
+    "diagram": "clk : _|-|_|-|_|-|_\nrst : 0___11111111\nen  : 0_1110_1110_\nd   : 010110100101\nq   : ????????????",
+    "answer": "After reset deasserts, q updates only on active clock edges when enable is high.",
+    "explanation": "Track state only on active edges and ignore data changes between sampling instants."
+  },
+  {
+    "id": 5,
+    "title": "Waveform Challenge #5",
+    "difficulty": "hard",
+    "question": "Given clk, rst_n, en, and d/q behavior, predict q after the marked edge.",
+    "diagram": "clk : _|-|_|-|_|-|_\nrst : 0___11111111\nen  : 0_1110_1110_\nd   : 010110100101\nq   : ????????????",
+    "answer": "After reset deasserts, q updates only on active clock edges when enable is high.",
+    "explanation": "Track state only on active edges and ignore data changes between sampling instants."
+  },
+  {
+    "id": 6,
+    "title": "Waveform Challenge #6",
+    "difficulty": "easy",
+    "question": "Given clk, rst_n, en, and d/q behavior, predict q after the marked edge.",
+    "diagram": "clk : _|-|_|-|_|-|_\nrst : 0___11111111\nen  : 0_1110_1110_\nd   : 010110100101\nq   : ????????????",
+    "answer": "After reset deasserts, q updates only on active clock edges when enable is high.",
+    "explanation": "Track state only on active edges and ignore data changes between sampling instants."
+  },
+  {
+    "id": 7,
+    "title": "Waveform Challenge #7",
+    "difficulty": "medium",
+    "question": "Given clk, rst_n, en, and d/q behavior, predict q after the marked edge.",
+    "diagram": "clk : _|-|_|-|_|-|_\nrst : 0___11111111\nen  : 0_1110_1110_\nd   : 010110100101\nq   : ????????????",
+    "answer": "After reset deasserts, q updates only on active clock edges when enable is high.",
+    "explanation": "Track state only on active edges and ignore data changes between sampling instants."
+  },
+  {
+    "id": 8,
+    "title": "Waveform Challenge #8",
+    "difficulty": "hard",
+    "question": "Given clk, rst_n, en, and d/q behavior, predict q after the marked edge.",
+    "diagram": "clk : _|-|_|-|_|-|_\nrst : 0___11111111\nen  : 0_1110_1110_\nd   : 010110100101\nq   : ????????????",
+    "answer": "After reset deasserts, q updates only on active clock edges when enable is high.",
+    "explanation": "Track state only on active edges and ignore data changes between sampling instants."
+  },
+  {
+    "id": 9,
+    "title": "Waveform Challenge #9",
+    "difficulty": "easy",
+    "question": "Given clk, rst_n, en, and d/q behavior, predict q after the marked edge.",
+    "diagram": "clk : _|-|_|-|_|-|_\nrst : 0___11111111\nen  : 0_1110_1110_\nd   : 010110100101\nq   : ????????????",
+    "answer": "After reset deasserts, q updates only on active clock edges when enable is high.",
+    "explanation": "Track state only on active edges and ignore data changes between sampling instants."
+  },
+  {
+    "id": 10,
+    "title": "Waveform Challenge #10",
+    "difficulty": "medium",
+    "question": "Given clk, rst_n, en, and d/q behavior, predict q after the marked edge.",
+    "diagram": "clk : _|-|_|-|_|-|_\nrst : 0___11111111\nen  : 0_1110_1110_\nd   : 010110100101\nq   : ????????????",
+    "answer": "After reset deasserts, q updates only on active clock edges when enable is high.",
+    "explanation": "Track state only on active edges and ignore data changes between sampling instants."
+  },
+  {
+    "id": 11,
+    "title": "Waveform Challenge #11",
+    "difficulty": "hard",
+    "question": "Given clk, rst_n, en, and d/q behavior, predict q after the marked edge.",
+    "diagram": "clk : _|-|_|-|_|-|_\nrst : 0___11111111\nen  : 0_1110_1110_\nd   : 010110100101\nq   : ????????????",
+    "answer": "After reset deasserts, q updates only on active clock edges when enable is high.",
+    "explanation": "Track state only on active edges and ignore data changes between sampling instants."
+  },
+  {
+    "id": 12,
+    "title": "Waveform Challenge #12",
+    "difficulty": "easy",
+    "question": "Given clk, rst_n, en, and d/q behavior, predict q after the marked edge.",
+    "diagram": "clk : _|-|_|-|_|-|_\nrst : 0___11111111\nen  : 0_1110_1110_\nd   : 010110100101\nq   : ????????????",
+    "answer": "After reset deasserts, q updates only on active clock edges when enable is high.",
+    "explanation": "Track state only on active edges and ignore data changes between sampling instants."
+  },
+  {
+    "id": 13,
+    "title": "Waveform Challenge #13",
+    "difficulty": "medium",
+    "question": "Given clk, rst_n, en, and d/q behavior, predict q after the marked edge.",
+    "diagram": "clk : _|-|_|-|_|-|_\nrst : 0___11111111\nen  : 0_1110_1110_\nd   : 010110100101\nq   : ????????????",
+    "answer": "After reset deasserts, q updates only on active clock edges when enable is high.",
+    "explanation": "Track state only on active edges and ignore data changes between sampling instants."
+  },
+  {
+    "id": 14,
+    "title": "Waveform Challenge #14",
+    "difficulty": "hard",
+    "question": "Given clk, rst_n, en, and d/q behavior, predict q after the marked edge.",
+    "diagram": "clk : _|-|_|-|_|-|_\nrst : 0___11111111\nen  : 0_1110_1110_\nd   : 010110100101\nq   : ????????????",
+    "answer": "After reset deasserts, q updates only on active clock edges when enable is high.",
+    "explanation": "Track state only on active edges and ignore data changes between sampling instants."
+  },
+  {
+    "id": 15,
+    "title": "Waveform Challenge #15",
+    "difficulty": "easy",
+    "question": "Given clk, rst_n, en, and d/q behavior, predict q after the marked edge.",
+    "diagram": "clk : _|-|_|-|_|-|_\nrst : 0___11111111\nen  : 0_1110_1110_\nd   : 010110100101\nq   : ????????????",
+    "answer": "After reset deasserts, q updates only on active clock edges when enable is high.",
+    "explanation": "Track state only on active edges and ignore data changes between sampling instants."
+  },
+  {
+    "id": 16,
+    "title": "Waveform Challenge #16",
+    "difficulty": "medium",
+    "question": "Given clk, rst_n, en, and d/q behavior, predict q after the marked edge.",
+    "diagram": "clk : _|-|_|-|_|-|_\nrst : 0___11111111\nen  : 0_1110_1110_\nd   : 010110100101\nq   : ????????????",
+    "answer": "After reset deasserts, q updates only on active clock edges when enable is high.",
+    "explanation": "Track state only on active edges and ignore data changes between sampling instants."
+  },
+  {
+    "id": 17,
+    "title": "Waveform Challenge #17",
+    "difficulty": "hard",
+    "question": "Given clk, rst_n, en, and d/q behavior, predict q after the marked edge.",
+    "diagram": "clk : _|-|_|-|_|-|_\nrst : 0___11111111\nen  : 0_1110_1110_\nd   : 010110100101\nq   : ????????????",
+    "answer": "After reset deasserts, q updates only on active clock edges when enable is high.",
+    "explanation": "Track state only on active edges and ignore data changes between sampling instants."
+  },
+  {
+    "id": 18,
+    "title": "Waveform Challenge #18",
+    "difficulty": "easy",
+    "question": "Given clk, rst_n, en, and d/q behavior, predict q after the marked edge.",
+    "diagram": "clk : _|-|_|-|_|-|_\nrst : 0___11111111\nen  : 0_1110_1110_\nd   : 010110100101\nq   : ????????????",
+    "answer": "After reset deasserts, q updates only on active clock edges when enable is high.",
+    "explanation": "Track state only on active edges and ignore data changes between sampling instants."
+  },
+  {
+    "id": 19,
+    "title": "Waveform Challenge #19",
+    "difficulty": "medium",
+    "question": "Given clk, rst_n, en, and d/q behavior, predict q after the marked edge.",
+    "diagram": "clk : _|-|_|-|_|-|_\nrst : 0___11111111\nen  : 0_1110_1110_\nd   : 010110100101\nq   : ????????????",
+    "answer": "After reset deasserts, q updates only on active clock edges when enable is high.",
+    "explanation": "Track state only on active edges and ignore data changes between sampling instants."
+  },
+  {
+    "id": 20,
+    "title": "Waveform Challenge #20",
+    "difficulty": "hard",
+    "question": "Given clk, rst_n, en, and d/q behavior, predict q after the marked edge.",
+    "diagram": "clk : _|-|_|-|_|-|_\nrst : 0___11111111\nen  : 0_1110_1110_\nd   : 010110100101\nq   : ????????????",
+    "answer": "After reset deasserts, q updates only on active clock edges when enable is high.",
+    "explanation": "Track state only on active edges and ignore data changes between sampling instants."
+  },
+  {
+    "id": 21,
+    "title": "Waveform Challenge #21",
+    "difficulty": "easy",
+    "question": "Given clk, rst_n, en, and d/q behavior, predict q after the marked edge.",
+    "diagram": "clk : _|-|_|-|_|-|_\nrst : 0___11111111\nen  : 0_1110_1110_\nd   : 010110100101\nq   : ????????????",
+    "answer": "After reset deasserts, q updates only on active clock edges when enable is high.",
+    "explanation": "Track state only on active edges and ignore data changes between sampling instants."
+  },
+  {
+    "id": 22,
+    "title": "Waveform Challenge #22",
+    "difficulty": "medium",
+    "question": "Given clk, rst_n, en, and d/q behavior, predict q after the marked edge.",
+    "diagram": "clk : _|-|_|-|_|-|_\nrst : 0___11111111\nen  : 0_1110_1110_\nd   : 010110100101\nq   : ????????????",
+    "answer": "After reset deasserts, q updates only on active clock edges when enable is high.",
+    "explanation": "Track state only on active edges and ignore data changes between sampling instants."
+  },
+  {
+    "id": 23,
+    "title": "Waveform Challenge #23",
+    "difficulty": "hard",
+    "question": "Given clk, rst_n, en, and d/q behavior, predict q after the marked edge.",
+    "diagram": "clk : _|-|_|-|_|-|_\nrst : 0___11111111\nen  : 0_1110_1110_\nd   : 010110100101\nq   : ????????????",
+    "answer": "After reset deasserts, q updates only on active clock edges when enable is high.",
+    "explanation": "Track state only on active edges and ignore data changes between sampling instants."
+  },
+  {
+    "id": 24,
+    "title": "Waveform Challenge #24",
+    "difficulty": "easy",
+    "question": "Given clk, rst_n, en, and d/q behavior, predict q after the marked edge.",
+    "diagram": "clk : _|-|_|-|_|-|_\nrst : 0___11111111\nen  : 0_1110_1110_\nd   : 010110100101\nq   : ????????????",
+    "answer": "After reset deasserts, q updates only on active clock edges when enable is high.",
+    "explanation": "Track state only on active edges and ignore data changes between sampling instants."
+  },
+  {
+    "id": 25,
+    "title": "Waveform Challenge #25",
+    "difficulty": "medium",
+    "question": "Given clk, rst_n, en, and d/q behavior, predict q after the marked edge.",
+    "diagram": "clk : _|-|_|-|_|-|_\nrst : 0___11111111\nen  : 0_1110_1110_\nd   : 010110100101\nq   : ????????????",
+    "answer": "After reset deasserts, q updates only on active clock edges when enable is high.",
+    "explanation": "Track state only on active edges and ignore data changes between sampling instants."
+  },
+  {
+    "id": 26,
+    "title": "Waveform Challenge #26",
+    "difficulty": "hard",
+    "question": "Given clk, rst_n, en, and d/q behavior, predict q after the marked edge.",
+    "diagram": "clk : _|-|_|-|_|-|_\nrst : 0___11111111\nen  : 0_1110_1110_\nd   : 010110100101\nq   : ????????????",
+    "answer": "After reset deasserts, q updates only on active clock edges when enable is high.",
+    "explanation": "Track state only on active edges and ignore data changes between sampling instants."
+  },
+  {
+    "id": 27,
+    "title": "Waveform Challenge #27",
+    "difficulty": "easy",
+    "question": "Given clk, rst_n, en, and d/q behavior, predict q after the marked edge.",
+    "diagram": "clk : _|-|_|-|_|-|_\nrst : 0___11111111\nen  : 0_1110_1110_\nd   : 010110100101\nq   : ????????????",
+    "answer": "After reset deasserts, q updates only on active clock edges when enable is high.",
+    "explanation": "Track state only on active edges and ignore data changes between sampling instants."
+  },
+  {
+    "id": 28,
+    "title": "Waveform Challenge #28",
+    "difficulty": "medium",
+    "question": "Given clk, rst_n, en, and d/q behavior, predict q after the marked edge.",
+    "diagram": "clk : _|-|_|-|_|-|_\nrst : 0___11111111\nen  : 0_1110_1110_\nd   : 010110100101\nq   : ????????????",
+    "answer": "After reset deasserts, q updates only on active clock edges when enable is high.",
+    "explanation": "Track state only on active edges and ignore data changes between sampling instants."
+  },
+  {
+    "id": 29,
+    "title": "Waveform Challenge #29",
+    "difficulty": "hard",
+    "question": "Given clk, rst_n, en, and d/q behavior, predict q after the marked edge.",
+    "diagram": "clk : _|-|_|-|_|-|_\nrst : 0___11111111\nen  : 0_1110_1110_\nd   : 010110100101\nq   : ????????????",
+    "answer": "After reset deasserts, q updates only on active clock edges when enable is high.",
+    "explanation": "Track state only on active edges and ignore data changes between sampling instants."
+  },
+  {
+    "id": 30,
+    "title": "Waveform Challenge #30",
+    "difficulty": "easy",
+    "question": "Given clk, rst_n, en, and d/q behavior, predict q after the marked edge.",
+    "diagram": "clk : _|-|_|-|_|-|_\nrst : 0___11111111\nen  : 0_1110_1110_\nd   : 010110100101\nq   : ????????????",
+    "answer": "After reset deasserts, q updates only on active clock edges when enable is high.",
+    "explanation": "Track state only on active edges and ignore data changes between sampling instants."
+  }
+]
