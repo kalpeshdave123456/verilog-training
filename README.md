@@ -34,3 +34,9 @@ This repo uses React in the browser through CDN scripts, so you can upload it di
 - Progress is saved in browser localStorage.
 - The RTL Playground is heuristic only. It is not a simulator or synthesizer.
 - If you later want a production build pipeline, you can migrate this UI into Vite or Next static export.
+
+
+## v2 UI update
+- MCQ practice now supports select + submit + correctness feedback
+- Test mode now shows per-question result review after submission
+- Video shelf now includes curated YouTube links

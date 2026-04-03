@@ -2,29 +2,49 @@
   {
     "id": 1,
     "topic": "Verilog Basics",
-    "title": "Add your preferred Verilog fundamentals video",
-    "url": "#",
-    "source": "Curate"
+    "title": "Mastering Verilog in 1 Hour: A Complete Guide to Key Concepts",
+    "description": "Fast overview for beginners moving toward interview prep; useful as a first-pass refresher before practicing MCQs.",
+    "url": "https://www.youtube.com/watch?v=YUB-OyGr1oA",
+    "source": "YouTube"
   },
   {
     "id": 2,
-    "topic": "VHDL Basics",
-    "title": "Add your preferred VHDL fundamentals video",
-    "url": "#",
-    "source": "Curate"
+    "topic": "Verilog Playlist",
+    "title": "Verilog Complete Tutorial in English",
+    "description": "Structured multi-video playlist for syntax, operators, and modeling styles; good for paced learning.",
+    "url": "https://www.youtube.com/playlist?list=PL_3xKnVkfI2itQhCyfnamNYSCHd2KHi4k",
+    "source": "YouTube"
   },
   {
     "id": 3,
-    "topic": "FSM Design",
-    "title": "Add your preferred FSM interview video",
-    "url": "#",
-    "source": "Curate"
+    "topic": "Verilog Playlist",
+    "title": "Verilog Tutorial For Beginners (in ENGLISH): Basic to Advanced",
+    "description": "Beginner-friendly path from foundations to deeper RTL concepts.",
+    "url": "https://www.youtube.com/playlist?list=PLAC_jmBddcjTPEh1UV_ojRJmsx2D9sQXH",
+    "source": "YouTube"
   },
   {
     "id": 4,
-    "topic": "Timing",
-    "title": "Add your preferred setup/hold explainer",
-    "url": "#",
-    "source": "Curate"
+    "topic": "VHDL Playlist",
+    "title": "Digital Systems Design VHDL",
+    "description": "Large VHDL playlist from Education 4u covering entity declaration, digital design blocks, and worked examples.",
+    "url": "https://www.youtube.com/playlist?list=PLrjkTql3jnm_N3QYj2mvjdAKECKVKUHQh",
+    "source": "YouTube"
+  },
+  {
+    "id": 5,
+    "topic": "VHDL Playlist",
+    "title": "Intro to VHDL",
+    "description": "Hands-on introductory series including Vivado setup and core combinational logic exercises.",
+    "url": "https://www.youtube.com/playlist?list=PLSPJDFPsV-ErigPF-0djRqiC5akGf-Q_0",
+    "source": "YouTube"
+  },
+  {
+    "id": 6,
+    "topic": "VHDL Basics",
+    "title": "Introduction to VHDL Programming",
+    "description": "Short starter video from Neso Academy for quick orientation before the broader VHDL tracks.",
+    "url": "https://www.youtube.com/watch?v=zX8GjjKyJ2A",
+    "source": "YouTube"
   }
 ]

@@ -61,3 +61,10 @@ textarea.editor { width: 100%; min-height: 260px; background: #08101e; color: #e
   .app-shell, .hero, .layout-2, .grid-3, .grid-2 { grid-template-columns: 1fr; }
   .sidebar { position: static; height: auto; }
 }
+
+
+.option-button { background: rgba(255,255,255,.02); color: var(--text); }
+.option-button:disabled { opacity: .5; cursor: not-allowed; }
+.option.selected { border-color: rgba(125,211,252,.65); background: rgba(125,211,252,.10); }
+label { display:grid; gap:8px; }
+input[type="number"] { background:#08101e; color: var(--text); border:1px solid var(--border); border-radius:12px; padding:10px 12px; }

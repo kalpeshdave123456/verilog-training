@@ -1,7 +1,7 @@
 
 const { useEffect, useMemo, useState } = React;
 
-const STORAGE_KEY = 'verilog_training_progress_v1';
+const STORAGE_KEY = 'verilog_training_progress_v2';
 
 const defaultProgress = {
   answered: {},
@@ -93,7 +93,7 @@ function App() {
         <div className="card" style={{ marginTop: 18 }}>
           <div className="muted">Current company track</div>
           <div style={{ fontSize: 20, fontWeight: 700, marginTop: 6 }}>{progress.companyTrack}</div>
-          <div className="footer-note">This is the optional power move: switch company-oriented drill tracks and use the RTL playground for local code feedback.</div>
+          <div className="footer-note">This build now supports option selection, submission, and answer review for both MCQ practice and full tests.</div>
         </div>
       </aside>
       <main className="content">
@@ -124,9 +124,9 @@ function Dashboard({ data, progress, setPage }) {
           <h1 style={{ marginBottom: 8 }}>Learn HDL, practice interviews, and debug RTL in one place.</h1>
           <p className="muted">Built for freshers and early-career hardware engineers with equal Verilog and VHDL coverage, test mode, waveform reasoning, and a local RTL playground.</p>
           <div className="row">
-            <button className="option" onClick={() => setPage('learn')}>Start learning</button>
-            <button className="option" onClick={() => setPage('practice')}>Open practice</button>
-            <button className="option" onClick={() => setPage('playground')}>Try playground</button>
+            <button className="option option-button" onClick={() => setPage('learn')}>Start learning</button>
+            <button className="option option-button" onClick={() => setPage('practice')}>Open practice</button>
+            <button className="option option-button" onClick={() => setPage('playground')}>Try playground</button>
           </div>
         </div>
         <div className="card">
@@ -143,26 +143,6 @@ function Dashboard({ data, progress, setPage }) {
         <StatCard label="Waveforms" value={data.waveforms.length} sub={`${Object.keys(progress.solvedWaveforms || {}).length} reviewed`} />
         <StatCard label="Tests" value={data.tests.length} sub="Timed exam mode" />
         <StatCard label="Track" value={progress.companyTrack} sub="Optional power move" />
-      </div>
-      <div className="grid grid-2">
-        <div className="card">
-          <h3>Recommended path</h3>
-          <ol className="muted">
-            <li>Finish 5 core lessons.</li>
-            <li>Do 50 MCQs in mixed mode.</li>
-            <li>Solve 10 RTL problems.</li>
-            <li>Complete 5 waveform drills.</li>
-            <li>Take a full timed test.</li>
-          </ol>
-        </div>
-        <div className="card">
-          <h3>Included optional power moves</h3>
-          <div className="list">
-            <div className="item">Company-focused tracks: General, NVIDIA, Intel, AMD, Qualcomm</div>
-            <div className="item">Local RTL playground with heuristic feedback for common interview bugs</div>
-            <div className="item">Planner that estimates weekly load based on your target schedule</div>
-          </div>
-        </div>
       </div>
     </div>
   );
@@ -190,7 +170,7 @@ function LearnPage({ lessons, selectedLesson, setSelectedLesson, lessonBody, pro
       <div className="card">
         <div className="row" style={{ justifyContent: 'space-between' }}>
           <h2>{selectedLesson?.title || 'Lesson'}</h2>
-          <button className="option" onClick={markDone}>Mark complete</button>
+          <button className="option option-button" onClick={markDone}>Mark complete</button>
         </div>
         <div dangerouslySetInnerHTML={{ __html: markdownToHtml(lessonBody || 'Loading...') }} />
       </div>
@@ -216,8 +196,8 @@ function PracticePage({ questions, progress, setProgress }) {
     setProgress(prev => ({ ...prev, answered: { ...prev.answered, [q.id]: selected === q.answer } }));
   };
   const next = () => { setSelected(null); setSubmitted(false); setIndex((index + 1) % filtered.length); };
-  const topics = [...new Set(questions.map(q => q.topic))];
-  const tracks = ['all', ...new Set(questions.map(q => q.companyTrack))];
+  const topics = [...new Set(questions.map(q => q.topic).filter(Boolean))];
+  const tracks = ['all', ...new Set(questions.map(q => q.companyTrack).filter(Boolean))];
 
   return (
     <div className="grid" style={{ gap: 18 }}>
@@ -232,17 +212,19 @@ function PracticePage({ questions, progress, setProgress }) {
         <h2>{q.question}</h2>
         <div className="grid">
           {q.options.map(opt => {
-            let cls = 'option';
+            let cls = 'option option-button';
+            if (selected === opt && !submitted) cls += ' selected';
             if (submitted && opt === q.answer) cls += ' correct';
             else if (submitted && opt === selected && opt !== q.answer) cls += ' wrong';
-            return <div key={opt} className={cls} onClick={() => !submitted && setSelected(opt)}>{opt}</div>;
+            return <button type="button" key={opt} className={cls} onClick={() => !submitted && setSelected(opt)}>{opt}</button>;
           })}
         </div>
         <div className="row" style={{ marginTop: 14 }}>
-          <button className="option" onClick={submit}>Submit</button>
-          <button className="option" onClick={next}>Next</button>
+          <button className="option option-button" onClick={submit} disabled={!selected || submitted}>Submit</button>
+          <button className="option option-button" onClick={next}>Next</button>
         </div>
-        {submitted && <div className="card" style={{ marginTop: 14 }}><strong>{selected === q.answer ? 'Correct.' : 'Review this.'}</strong><div className="footer-note">{q.explanation}</div></div>}
+        {!submitted && <div className="footer-note">Pick one option, then press Submit to see whether your answer is correct.</div>}
+        {submitted && <div className="card" style={{ marginTop: 14 }}><strong>{selected === q.answer ? 'Correct.' : 'Review this.'}</strong><div className="footer-note">Your answer: {selected}</div><div className="footer-note">Correct answer: {q.answer}</div><div className="footer-note">{q.explanation}</div></div>}
       </div>
     </div>
   );
@@ -268,8 +250,8 @@ function ProblemsPage({ problems, progress, setProgress }) {
         <p>{problem.prompt}</p>
         <pre><code>{problem.starterCode}</code></pre>
         <div className="row">
-          <button className="option" onClick={() => setShowSolution(v => !v)}>{showSolution ? 'Hide solution' : 'Show solution'}</button>
-          <button className="option" onClick={() => setProgress(prev => ({ ...prev, solvedProblems: { ...prev.solvedProblems, [problem.id]: true } }))}>Mark solved</button>
+          <button className="option option-button" onClick={() => setShowSolution(v => !v)}>{showSolution ? 'Hide solution' : 'Show solution'}</button>
+          <button className="option option-button" onClick={() => setProgress(prev => ({ ...prev, solvedProblems: { ...prev.solvedProblems, [problem.id]: true } }))}>Mark solved</button>
         </div>
         {showSolution && <div className="card" style={{ marginTop: 14 }}><pre><code>{problem.solution}</code></pre><div className="footer-note">{problem.explanation}</div></div>}
       </div>
@@ -289,8 +271,8 @@ function WaveformPage({ waveforms, progress, setProgress }) {
         <p>{wf.question}</p>
         <div className="ascii">{wf.diagram}</div>
         <div className="row">
-          <button className="option" onClick={() => setProgress(prev => ({ ...prev, solvedWaveforms: { ...prev.solvedWaveforms, [wf.id]: true } }))}>Mark reviewed</button>
-          <button className="option" onClick={() => setIdx((idx + 1) % waveforms.length)}>Next waveform</button>
+          <button className="option option-button" onClick={() => setProgress(prev => ({ ...prev, solvedWaveforms: { ...prev.solvedWaveforms, [wf.id]: true } }))}>Mark reviewed</button>
+          <button className="option option-button" onClick={() => setIdx((idx + 1) % waveforms.length)}>Next waveform</button>
         </div>
       </div>
       <div className="card">
@@ -307,15 +289,21 @@ function TestsPage({ tests, questions, progress, setProgress }) {
   const [mode, setMode] = useState('list');
   const [answers, setAnswers] = useState({});
   const [startAt, setStartAt] = useState(null);
+  const [tick, setTick] = useState(0);
   const test = tests.find(t => t.test_id === selectedTestId) || tests[0];
   const testQuestions = useMemo(() => test ? test.questionIds.map(id => questions.find(q => q.id === id)).filter(Boolean) : [], [test, questions]);
   const elapsedSec = startAt ? Math.floor((Date.now() - startAt) / 1000) : 0;
   const remainingSec = Math.max(0, (test?.durationMinutes || 1) * 60 - elapsedSec);
+
   useEffect(() => {
-    if (mode !== 'run' || remainingSec <= 0) return;
-    const t = setInterval(() => setStartAt(x => x), 1000);
+    if (mode !== 'run') return;
+    const t = setInterval(() => setTick(v => v + 1), 1000);
     return () => clearInterval(t);
-  }, [mode, remainingSec]);
+  }, [mode]);
+
+  useEffect(() => {
+    if (mode === 'run' && remainingSec <= 0) setMode('result');
+  }, [mode, remainingSec, tick]);
 
   const score = testQuestions.reduce((acc, q) => acc + (answers[q.id] === q.answer ? 1 : 0), 0);
 
@@ -333,12 +321,18 @@ function TestsPage({ tests, questions, progress, setProgress }) {
             <div key={q.id} className="card">
               <div className="muted">Q{i+1} · {q.topic} · {q.difficulty}</div>
               <div style={{ margin: '8px 0 12px' }}>{q.question}</div>
-              <div className="grid">{q.options.map(opt => <div key={opt} className="option" onClick={() => setAnswers(prev => ({ ...prev, [q.id]: opt }))}>{opt}</div>)}</div>
+              <div className="grid">
+                {q.options.map(opt => {
+                  let cls = 'option option-button';
+                  if (answers[q.id] === opt) cls += ' selected';
+                  return <button type="button" key={opt} className={cls} onClick={() => setAnswers(prev => ({ ...prev, [q.id]: opt }))}>{opt}</button>;
+                })}
+              </div>
             </div>
           ))}
         </div>
         <div className="row" style={{ marginTop: 14 }}>
-          <button className="option" onClick={() => setMode('result')}>Submit test</button>
+          <button className="option option-button" onClick={() => setMode('result')}>Submit test</button>
         </div>
       </div>
     );
@@ -346,11 +340,30 @@ function TestsPage({ tests, questions, progress, setProgress }) {
 
   if (mode === 'result') {
     return (
-      <div className="card">
-        <h2>{test.name} results</h2>
-        <div className="stat">{score} / {testQuestions.length}</div>
-        <div className="footer-note">Use this after completing core lessons and mixed practice.</div>
-        <button className="option" onClick={() => { setMode('list'); setAnswers({}); }}>Back to tests</button>
+      <div className="grid" style={{ gap: 16 }}>
+        <div className="card">
+          <h2>{test.name} results</h2>
+          <div className="stat">{score} / {testQuestions.length}</div>
+          <div className="footer-note">Each question below shows your answer, the correct answer, and the explanation.</div>
+          <div className="row" style={{ marginTop: 14 }}>
+            <button className="option option-button" onClick={() => { setMode('list'); setAnswers({}); }}>Back to tests</button>
+            <button className="option option-button" onClick={() => { setStartAt(Date.now()); setAnswers({}); setMode('run'); }}>Retake test</button>
+          </div>
+        </div>
+        {testQuestions.map((q, i) => {
+          const mine = answers[q.id];
+          const correct = mine === q.answer;
+          return (
+            <div key={q.id} className="card">
+              <div className="muted">Q{i + 1} · {q.topic} · {q.difficulty}</div>
+              <h3 style={{ marginBottom: 8 }}>{q.question}</h3>
+              <div className="footer-note">Your answer: {mine || 'Not answered'}</div>
+              <div className="footer-note">Correct answer: {q.answer}</div>
+              <div className={correct ? 'badge-ok' : 'badge-bad'} style={{ marginTop: 8, fontWeight: 700 }}>{correct ? 'Correct' : 'Incorrect'}</div>
+              <div className="footer-note" style={{ marginTop: 8 }}>{q.explanation}</div>
+            </div>
+          );
+        })}
       </div>
     );
   }
@@ -367,7 +380,7 @@ function TestsPage({ tests, questions, progress, setProgress }) {
         <h2>{test.name}</h2>
         <div className="row"><div className="chip">{test.focus}</div><div className="chip">{test.durationMinutes} minutes</div><div className="chip">{testQuestions.length} questions</div></div>
         <p className="muted">Timed, static, no-backend exam mode suitable for GitHub Pages.</p>
-        <button className="option" onClick={() => { setStartAt(Date.now()); setAnswers({}); setMode('run'); }}>Start test</button>
+        <button className="option option-button" onClick={() => { setStartAt(Date.now()); setAnswers({}); setMode('run'); }}>Start test</button>
       </div>
     </div>
   );
@@ -430,7 +443,7 @@ function PlannerPage({ data, progress, setProgress }) {
       <div className="card">
         <h2>Company track selector</h2>
         <div className="row">
-          {['General', 'NVIDIA', 'Intel', 'AMD', 'Qualcomm'].map(track => <button key={track} className="option" onClick={() => setProgress(prev => ({ ...prev, companyTrack: track }))}>{track}</button>)}
+          {['General', 'NVIDIA', 'Intel', 'AMD', 'Qualcomm'].map(track => <button key={track} className="option option-button" onClick={() => setProgress(prev => ({ ...prev, companyTrack: track }))}>{track}</button>)}
         </div>
         <p className="muted">This lets you bias practice toward a preferred interview flavor. It is implemented as a static metadata filter, so it works on GitHub Pages with no backend.</p>
       </div>
@@ -442,9 +455,19 @@ function VideosPage({ videos }) {
   return (
     <div className="card">
       <h2>Video shelf</h2>
-      <p className="muted">This app includes placeholders so you can plug in your preferred curated links. That keeps the repo fully static and easy to maintain.</p>
+      <p className="muted">Curated beginner-to-interview HDL videos and playlists.</p>
       <div className="list">
-        {videos.map(v => <div className="item" key={v.id}><strong>{v.topic}</strong><div>{v.title}</div><div className="footer-note">{v.url === '#' ? 'Add a link in content/videos/videos.json' : v.url}</div></div>)}
+        {videos.map(v => (
+          <div className="item" key={v.id}>
+            <div className="row" style={{justifyContent:'space-between'}}>
+              <strong>{v.topic}</strong>
+              <span className="chip">{v.source}</span>
+            </div>
+            <div style={{marginTop:8, fontWeight:600}}>{v.title}</div>
+            <div className="footer-note">{v.description}</div>
+            <div className="footer-note" style={{marginTop:8}}><a href={v.url} target="_blank" rel="noreferrer">Open on YouTube</a></div>
+          </div>
+        ))}
       </div>
     </div>
   );
